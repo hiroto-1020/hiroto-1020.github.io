@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initNavigation();
     initHeroCanvas();
     initScrollAnimations();
+    initBackgroundParallax();
     initContactForm();
 });
 
@@ -85,7 +86,7 @@ function initScrollAnimations() {
     });
 
     // Staggered Animations for Cards
-    const gridSections = ['.skills__grid', '.projects__list', '.services__grid'];
+    const gridSections = ['.skills__grid', '.projects__list', '.services__grid', '.about__grid'];
     gridSections.forEach(section => {
         const items = document.querySelectorAll(`${section} > *`);
         if(items.length > 0) {
@@ -123,6 +124,29 @@ function initScrollAnimations() {
                 }
             }
         );
+    });
+}
+
+/* =========================================
+   Background Parallax
+   ========================================= */
+function initBackgroundParallax() {
+    const shapes = document.querySelectorAll('.bg-decoration');
+    
+    shapes.forEach((shape, index) => {
+        // Different speeds for each shape to create depth
+        const speed = (index + 1) * 20; 
+        
+        gsap.to(shape, {
+            y: -speed + '%', // Move up as we scroll down
+            ease: 'none',
+            scrollTrigger: {
+                trigger: 'body',
+                start: 'top top',
+                end: 'bottom bottom',
+                scrub: 1
+            }
+        });
     });
 }
 
@@ -234,4 +258,3 @@ function initContactForm() {
         form.reset();
     });
 }
-

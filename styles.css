@@ -45,6 +45,44 @@ body {
     line-height: 1.8;
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
+    position: relative;
+}
+
+/* Background Decorations */
+.bg-decoration {
+    position: fixed;
+    border-radius: 50%;
+    filter: blur(80px);
+    z-index: -1;
+    opacity: 0.4;
+    pointer-events: none;
+}
+
+.bg-decoration--1 {
+    width: 40vw;
+    height: 40vw;
+    background: radial-gradient(circle, var(--accent-color), transparent);
+    top: -10%;
+    right: -10%;
+    opacity: 0.2;
+}
+
+.bg-decoration--2 {
+    width: 30vw;
+    height: 30vw;
+    background: radial-gradient(circle, #6366f1, transparent); /* Indigo */
+    bottom: 20%;
+    left: -5%;
+    opacity: 0.15;
+}
+
+.bg-decoration--3 {
+    width: 25vw;
+    height: 25vw;
+    background: radial-gradient(circle, #10b981, transparent); /* Emerald */
+    top: 40%;
+    right: 10%;
+    opacity: 0.1;
 }
 
 a {
@@ -330,6 +368,8 @@ img {
 
 .hero__content {
     max-width: 800px;
+    position: relative;
+    z-index: 1;
 }
 
 .hero__label {
@@ -417,19 +457,45 @@ img {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: var(--spacing-lg);
-    align-items: start;
+    align-items: center;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
     .about__grid {
         grid-template-columns: 1fr;
     }
+    
+    .about__image {
+        order: -1;
+        margin-bottom: var(--spacing-md);
+    }
+}
+
+/* About Image Styles */
+.about__image .image-wrapper {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    border: 1px solid var(--border-color);
+}
+
+.about__image img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.about__image:hover img {
+    transform: scale(1.03);
 }
 
 .about__text h3 {
-    font-size: 1.5rem;
+    font-size: clamp(1.5rem, 3vw, 2rem);
     margin-bottom: var(--spacing-md);
     color: #fff;
+    line-height: 1.4;
 }
 
 .about__text p {
@@ -439,12 +505,13 @@ img {
 
 .about__stats {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
     gap: var(--spacing-md);
     background: var(--bg-secondary);
     padding: var(--spacing-md);
     border-radius: 8px;
     border: 1px solid var(--border-color);
+    margin-top: var(--spacing-md);
 }
 
 .stat-item {
@@ -454,7 +521,7 @@ img {
 .stat-num {
     display: block;
     font-family: var(--font-heading);
-    font-size: 2.5rem;
+    font-size: 2rem;
     font-weight: 800;
     color: var(--accent-color);
     line-height: 1;
@@ -470,6 +537,12 @@ img {
 /* =========================================
    Skills
    ========================================= */
+.skills__intro {
+    max-width: 800px;
+    margin-bottom: var(--spacing-lg);
+    color: var(--text-secondary);
+}
+
 .skills__grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -477,11 +550,12 @@ img {
 }
 
 .skill-card {
-    background: var(--bg-secondary);
+    background: rgba(22, 25, 31, 0.8); /* slightly transparent for bg effect */
     border: 1px solid var(--border-color);
     padding: var(--spacing-md);
     border-radius: 8px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    backdrop-filter: blur(5px);
 }
 
 .skill-card:hover {
@@ -593,13 +667,14 @@ img {
 }
 
 .project-card {
-    background: var(--bg-secondary);
+    background: rgba(22, 25, 31, 0.8);
     border-radius: 12px;
     overflow: hidden;
     border: 1px solid var(--border-color);
     transition: transform 0.3s ease;
     display: flex;
     flex-direction: column;
+    backdrop-filter: blur(5px);
 }
 
 .project-card:hover {
@@ -607,8 +682,55 @@ img {
     border-color: var(--accent-color);
 }
 
+.project-card__thumb {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    position: relative;
+}
+
+.project-card__thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.project-card:hover .project-card__thumb img {
+    transform: scale(1.05);
+}
+
+.project-card__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.project-card:hover .project-card__overlay {
+    opacity: 1;
+}
+
+.project-card__overlay-text {
+    color: #fff;
+    font-weight: 600;
+    border: 1px solid #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+}
+
 .project-card__content {
     padding: var(--spacing-md);
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
 }
 
 .project-card__tag {
@@ -619,6 +741,7 @@ img {
     padding: 2px 8px;
     border-radius: 100px;
     margin-bottom: var(--spacing-sm);
+    align-self: flex-start;
 }
 
 .project-card__title {
@@ -629,13 +752,14 @@ img {
 .project-card__desc {
     color: var(--text-secondary);
     margin-bottom: var(--spacing-md);
+    font-size: 0.9rem;
 }
 
 .project-card__stack {
     display: flex;
     flex-wrap: wrap;
     gap: 0.8rem;
-    margin-bottom: var(--spacing-md);
+    margin-top: auto;
 }
 
 .project-card__stack li {
@@ -644,34 +768,6 @@ img {
     color: #fff;
     background: rgba(255,255,255,0.05);
     padding: 4px 10px;
-    border-radius: 4px;
-}
-
-.project-card__link {
-    margin-top: auto;
-}
-
-.btn-text {
-    color: var(--accent-color);
-    font-weight: 600;
-    position: relative;
-}
-
-.btn-text::after {
-    content: '→';
-    margin-left: 5px;
-    transition: margin-left 0.3s ease;
-}
-
-.btn-text:hover::after {
-    margin-left: 10px;
-}
-
-.status-badge {
-    font-size: 0.8rem;
-    color: var(--text-secondary);
-    background: rgba(255,255,255,0.05);
-    padding: 6px 12px;
     border-radius: 4px;
 }
 
@@ -692,11 +788,12 @@ img {
 }
 
 .service-card {
-    background: var(--bg-secondary);
+    background: rgba(22, 25, 31, 0.8);
     padding: var(--spacing-md);
     border-radius: 8px;
     border: 1px solid var(--border-color);
     transition: background 0.3s ease;
+    backdrop-filter: blur(5px);
 }
 
 .service-card:hover {
@@ -726,6 +823,12 @@ img {
 /* =========================================
    Process
    ========================================= */
+.process__intro {
+    max-width: 800px;
+    margin-bottom: var(--spacing-lg);
+    color: var(--text-secondary);
+}
+
 .process__steps {
     display: flex;
     flex-direction: column;
@@ -878,4 +981,3 @@ img {
 .fade-in, .reveal-text, .reveal-card, .reveal-up, .reveal-left {
     opacity: 0; /* Handled by GSAP */
 }
-
