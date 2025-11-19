@@ -20,10 +20,17 @@
 </head>
 <body>
 
-    <!-- Background Decoration Elements -->
+    <!-- Background Decoration Elements (Parallax & Shooting Stars) -->
     <div class="bg-decoration bg-decoration--1"></div>
     <div class="bg-decoration bg-decoration--2"></div>
     <div class="bg-decoration bg-decoration--3"></div>
+    
+    <div class="shooting-star">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
 
     <!-- Header / Navigation -->
     <header class="header">
@@ -82,7 +89,10 @@
         <!-- About Section -->
         <section id="about" class="section about">
             <div class="container">
-                <h2 class="section__title" data-text="About">About Me</h2>
+                <h2 class="section__title" data-text="About">
+                    <span class="section__title-ja">私について</span>
+                    About Me
+                </h2>
                 <div class="about__grid">
                     <div class="about__image reveal-card">
                         <div class="image-wrapper">
@@ -102,29 +112,20 @@
                             </p>
                             <p>
                                 私の強みは「エンジニアリング」と「ビジネス視点」の両立です。
-                                綺麗なコードを書くことはもちろんですが、
                                 「なぜそれを作るのか」「どうすれば成果が出るか」を常に問い続け、
                                 クライアント様と同じ目線でプロジェクトを推進します。
                             </p>
-                            <p>
-                                現在はフリーランスとして、Webサイト開発に加え、
-                                最新のAI技術（LLM/音声モデル）を活用した業務改善ツールの開発にも注力。
-                                「技術で人の時間を創出し、本質的な価値創造に集中できる世界」を目指しています。
-                            </p>
-                        </div>
-                        
-                        <div class="about__stats reveal-card">
-                            <div class="stat-item">
-                                <span class="stat-num">30+</span>
-                                <span class="stat-label">Team Managed</span>
-                            </div>
-                            <div class="stat-item">
-                                <span class="stat-num">AI</span>
-                                <span class="stat-label">Automation</span>
-                            </div>
-                            <div class="stat-item">
-                                <span class="stat-num">SEO</span>
-                                <span class="stat-label">Optimization</span>
+                            
+                            <!-- 生い立ちセクション -->
+                            <div class="about__bio-section">
+                                <h4><span class="icon">📍</span>Origin / Background</h4>
+                                <p>
+                                    大阪府出身。幼少期からモノづくりが好きで、
+                                    「自分の作ったものが誰かの役に立つ」ことに喜びを感じていました。
+                                    大学時代にプログラミングと出会い、
+                                    自分のアイデアを形にできるWeb技術の可能性に魅了され、エンジニアの道へ。
+                                    現在は東京を拠点に活動しています。
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -135,7 +136,10 @@
         <!-- Skills Section -->
         <section id="skills" class="section skills">
             <div class="container">
-                <h2 class="section__title" data-text="Skills">Technical Stack</h2>
+                <h2 class="section__title" data-text="Skills">
+                    <span class="section__title-ja">技術スタック</span>
+                    Technical Stack
+                </h2>
                 <div class="skills__intro reveal-text">
                     <p>ただ使えるだけでなく、プロジェクトの特性（速度重視、堅牢性重視、SEO重視など）に合わせて最適な技術選定を行います。</p>
                 </div>
@@ -229,7 +233,10 @@
         <!-- Experience Section -->
         <section id="experience" class="section experience">
             <div class="container">
-                <h2 class="section__title" data-text="History">Experience</h2>
+                <h2 class="section__title" data-text="History">
+                    <span class="section__title-ja">経歴</span>
+                    Experience
+                </h2>
                 <div class="timeline">
                     <div class="timeline__item reveal-up">
                         <div class="timeline__date">20XX – 20XX</div>
@@ -237,10 +244,7 @@
                             <h3>Frontend Engineer Intern</h3>
                             <span class="timeline__org">@ 株式会社ガーディアン（東京）</span>
                             <p>
-                                大学在学中にインターンとして参画。
-                                実務未経験からスタートし、HTML/CSS/JavaScriptの基礎を習得。
-                                半年後には実際のクライアント案件のコーディングを担当し、
-                                納期厳守と品質担保の重要性を現場で叩き込まれました。
+                                大学在学中にインターンとして参画。実務未経験からHTML/CSS/JavaScriptの基礎を習得し、半年後にはクライアント案件のコーディングを担当。納期厳守の意識と、保守性の高いコードを書く基礎力を現場で養いました。
                             </p>
                         </div>
                     </div>
@@ -250,13 +254,13 @@
                             <h3>Frontend Engineer / Team Lead</h3>
                             <span class="timeline__org">@ 株式会社ガーディアン</span>
                             <p>
-                                新卒入社後、異例のスピードで2年目に課長職へ昇進。
-                                プレイングマネージャーとして自身の担当案件をこなしながら、
-                                約30名のエンジニア・デザイナーチームのマネジメントに従事。
-                                <br>
-                                ・Webサイト設計〜構築〜運用支援（LP、コーポレート、ECなど）<br>
-                                ・社内業務改善ツールの開発主導（日報自動化など）<br>
-                                ・AIを活用したSEO記事制作フローの構築により、制作効率を150%向上
+                                新卒入社後、2年目に課長職へ昇進。プレイングマネージャーとして、約30名のチームマネジメントと自身の制作業務を両立。
+                                <br><br>
+                                <strong>主な実績：</strong><br>
+                                ・Webサイト構築・運用（LP、コーポレート、ECなど累計50サイト以上）<br>
+                                ・日報作成などの社内業務を自動化するツールの開発・導入<br>
+                                ・AIを活用した記事作成フローの構築（SEO記事の量産体制確立）<br>
+                                ・新人研修カリキュラムの作成とメンター業務
                             </p>
                         </div>
                     </div>
@@ -266,10 +270,14 @@
                             <h3>Freelance Frontend & AI Engineer</h3>
                             <span class="timeline__org">@ Freelance</span>
                             <p>
-                                独立し、より専門的な技術課題の解決に注力。
-                                クライアントワークでは「作って終わり」ではなく、
-                                その後の運用コスト削減まで見据えたAI導入支援やツール開発を行っています。
-                                また、個人開発としてReact Nativeを用いたアプリ開発にも挑戦中。
+                                独立し、WebとAIを掛け合わせたソリューション提供に特化。
+                                クライアントのDX（デジタルトランスフォーメーション）パートナーとして活動中。
+                                <br><br>
+                                <strong>現在の活動：</strong><br>
+                                ・AIを活用した業務効率化ツールの受託開発<br>
+                                ・React Nativeを用いたクロスプラットフォームアプリ開発<br>
+                                ・個人開発アプリ「FitGear」の機能拡張とマーケティング<br>
+                                ・生成AIを活用した新規事業のPoC開発支援
                             </p>
                         </div>
                     </div>
@@ -280,9 +288,13 @@
         <!-- Projects Section -->
         <section id="projects" class="section projects">
             <div class="container">
-                <h2 class="section__title" data-text="Works">Selected Projects</h2>
+                <h2 class="section__title" data-text="Works">
+                    <span class="section__title-ja">実績紹介</span>
+                    Selected Projects
+                </h2>
                 <div class="projects__list">
                     
+                    <!-- Project 1 -->
                     <article class="project-card reveal-card">
                         <div class="project-card__thumb">
                             <img src="./image/S__102850563_0.jpg" alt="FitGear Thumbnail">
@@ -294,9 +306,8 @@
                             <span class="project-card__tag">Mobile App / Personal Dev</span>
                             <h3 class="project-card__title">FitGear</h3>
                             <p class="project-card__desc">
-                                完全個人開発のトレーニング記録アプリ。
-                                「継続できること」を最優先にUIを設計。
-                                データの永続化からグラフによる可視化までをReact Nativeで実装。
+                                完全個人開発のトレーニング記録アプリ。「継続できること」を最優先にUIを設計し、迷わず記録できる体験を実現。
+                                カレンダー機能や部位ごとのボリューム管理など、トレーニーが必要な機能を網羅。
                             </p>
                             <ul class="project-card__stack">
                                 <li>React Native</li>
@@ -307,6 +318,7 @@
                         </div>
                     </article>
 
+                    <!-- Project 2 -->
                     <article class="project-card reveal-card">
                         <div class="project-card__thumb">
                             <img src="./image/S__102850564_0.jpg" alt="AI Automation Thumbnail">
@@ -318,9 +330,8 @@
                             <span class="project-card__tag">Client Work / DX</span>
                             <h3 class="project-card__title">AI Business Automation</h3>
                             <p class="project-card__desc">
-                                企業の社内ナレッジを検索可能にするチャットボットや、
-                                日報作成を自動化するツール群の開発。
-                                業務時間を月間約40時間削減することに成功。
+                                企業の社内ナレッジをベクトル検索可能にするチャットボットや、日報作成を自動化するツール群の開発。
+                                従業員の業務時間を月間約40時間削減し、コア業務への集中を実現しました。
                             </p>
                             <ul class="project-card__stack">
                                 <li>Next.js</li>
@@ -331,6 +342,7 @@
                         </div>
                     </article>
 
+                    <!-- Project 3 -->
                     <article class="project-card reveal-card">
                         <div class="project-card__thumb">
                             <img src="./image/S__102850563_0.jpg" alt="AI Dubbing Thumbnail">
@@ -343,8 +355,7 @@
                             <h3 class="project-card__title">AI Dubbing App</h3>
                             <p class="project-card__desc">
                                 動画の音声を多言語へ自動翻訳・吹き替えを行うアプリ。
-                                音声認識(Whisper)と音声合成技術を組み合わせ、
-                                クリエイターの海外展開を支援するツールとして開発中。
+                                音声認識(Whisper)と高精度な音声合成技術を組み合わせ、クリエイターの海外展開を支援するツールとして開発中。
                             </p>
                             <ul class="project-card__stack">
                                 <li>React</li>
@@ -361,23 +372,28 @@
         <!-- Services Section -->
         <section id="services" class="section services">
             <div class="container">
-                <h2 class="section__title" data-text="Offer">Services</h2>
+                <h2 class="section__title" data-text="Offer">
+                    <span class="section__title-ja">提供できること</span>
+                    Services
+                </h2>
                 <div class="services__grid">
                     <div class="service-card reveal-up">
                         <div class="service-card__icon">01</div>
                         <h3>Web Development</h3>
                         <p>
-                            新規サイト構築からリニューアルまで。
-                            SEOやアクセシビリティを考慮し、
-                            「成果が出る」Webサイトを構築します。
+                            <strong>Webサイト・LP制作</strong><br>
+                            新規構築からリニューアルまで対応します。
+                            ただ綺麗なだけでなく、SEO（検索エンジン最適化）やアクセシビリティを考慮し、
+                            「集客できる」「使いやすい」Webサイトを構築します。
                         </p>
                     </div>
                     <div class="service-card reveal-up">
                         <div class="service-card__icon">02</div>
                         <h3>Renovation & Performance</h3>
                         <p>
-                            既存サイトの表示速度改善や、モダン化改修。
-                            UXを損なうボトルネックを解消し、
+                            <strong>サイト改善・高速化</strong><br>
+                            既存サイトの表示速度改善や、モダン化改修を行います。
+                            古くなったコードの刷新や、UXを損なうボトルネックを解消し、
                             コンバージョン率の向上に貢献します。
                         </p>
                     </div>
@@ -385,18 +401,20 @@
                         <div class="service-card__icon">03</div>
                         <h3>AI DX Support</h3>
                         <p>
-                            「この業務、自動化できないか？」という相談から、
-                            AIツールの企画・PoC開発・導入までをサポート。
-                            業務コストを削減します。
+                            <strong>AI活用・業務自動化</strong><br>
+                            「この業務、自動化できないか？」というご相談から承ります。
+                            ChatGPT等のAPIを活用した業務ツールの企画・PoC開発・本番導入までをサポートし、
+                            大幅なコスト削減を実現します。
                         </p>
                     </div>
                     <div class="service-card reveal-up">
                         <div class="service-card__icon">04</div>
                         <h3>Documentation & Ops</h3>
                         <p>
-                            作った後の運用が一番大切です。
-                            誰でも運用できるドキュメント整備や、
-                            チームが自走できる環境づくりを支援します。
+                            <strong>運用設計・ドキュメント整備</strong><br>
+                            作った後の「運用」が最も重要です。
+                            専門知識がなくても更新・運用できるマニュアルの作成や、
+                            チームが自走できる環境づくりまで丁寧に支援します。
                         </p>
                     </div>
                 </div>
@@ -406,7 +424,10 @@
         <!-- Process Section -->
         <section id="process" class="section process">
             <div class="container">
-                <h2 class="section__title" data-text="Flow">Process</h2>
+                <h2 class="section__title" data-text="Flow">
+                    <span class="section__title-ja">制作の流れ</span>
+                    Process
+                </h2>
                 <div class="process__intro reveal-text">
                     <p>密なコミュニケーションを大切にしています。進捗の透明性を確保し、安心してお任せいただける進行を心がけます。</p>
                 </div>
@@ -415,42 +436,48 @@
                         <span class="step-num">01</span>
                         <div class="step-content">
                             <h4>Hearing & Research</h4>
-                            <p>まずは徹底的にお話を聞かせてください。現状の課題、達成したいゴール、予算感などを整理し、最適なプランを提案します。</p>
+                            <p><strong>ヒアリング・調査</strong><br>
+                            まずは徹底的にお話を聞かせてください。現状の課題、達成したいゴール、予算感などを整理し、最適なプランを提案します。</p>
                         </div>
                     </div>
                     <div class="process__step reveal-left">
                         <span class="step-num">02</span>
                         <div class="step-content">
                             <h4>IA / Wireframe</h4>
-                            <p>いきなりデザインするのではなく、情報の構成や画面遷移（ワイヤーフレーム）を作成し、認識のズレをなくします。</p>
+                            <p><strong>情報設計・構成案作成</strong><br>
+                            いきなりデザインするのではなく、情報の構成や画面遷移（ワイヤーフレーム）を作成し、認識のズレをなくします。</p>
                         </div>
                     </div>
                     <div class="process__step reveal-left">
                         <span class="step-num">03</span>
                         <div class="step-content">
                             <h4>Design & Prototype</h4>
-                            <p>ブランドイメージに合わせたデザインを作成。必要に応じてプロトタイプを作成し、動きのイメージも共有します。</p>
+                            <p><strong>デザイン・プロトタイプ</strong><br>
+                            ブランドイメージに合わせたデザインを作成。必要に応じて動きの確認ができるプロトタイプを作成し、完成イメージを共有します。</p>
                         </div>
                     </div>
                     <div class="process__step reveal-left">
                         <span class="step-num">04</span>
                         <div class="step-content">
                             <h4>Development</h4>
-                            <p>可読性が高く、保守しやすいコードで実装します。各デバイスでの表示確認や動作テストも徹底して行います。</p>
+                            <p><strong>実装・開発</strong><br>
+                            可読性が高く、将来的な変更にも強いコードで実装します。各デバイスでの表示確認や動作テストも徹底して行います。</p>
                         </div>
                     </div>
                     <div class="process__step reveal-left">
                         <span class="step-num">05</span>
                         <div class="step-content">
                             <h4>Release & Handover</h4>
-                            <p>本番環境への公開作業を行います。更新方法のレクチャーや、運用マニュアルの作成もお任せください。</p>
+                            <p><strong>公開・納品</strong><br>
+                            本番環境への公開作業を行います。更新方法のレクチャーや、運用マニュアルの作成もお任せください。</p>
                         </div>
                     </div>
                     <div class="process__step reveal-left">
                         <span class="step-num">06</span>
                         <div class="step-content">
                             <h4>Improvement</h4>
-                            <p>公開して終わりではありません。アクセス解析や改善提案など、パートナーとして継続的にサポート可能です。</p>
+                            <p><strong>改善・保守運用</strong><br>
+                            公開して終わりではありません。アクセス解析や改善提案など、ビジネスパートナーとして継続的にサポート可能です。</p>
                         </div>
                     </div>
                 </div>
@@ -461,39 +488,31 @@
         <section id="contact" class="section contact">
             <div class="container">
                 <div class="contact__inner reveal-up">
-                    <h2 class="section__title" data-text="Contact">Get In Touch</h2>
+                    <h2 class="section__title" data-text="Contact">
+                        <span class="section__title-ja">お問い合わせ</span>
+                        Get In Touch
+                    </h2>
                     <p class="contact__text">
                         制作のご依頼、業務改善のご相談、その他お仕事に関するお問い合わせは<br>
-                        以下のフォームまたはSNSよりお気軽にご連絡ください。<br>
+                        以下のメールアドレスまたはSNSよりお気軽にご連絡ください。<br>
                         通常、1営業日以内に返信いたします。
                     </p>
                     
                     <div class="contact__links">
-                        <a href="mailto:contact@hiroto-horita.com" class="contact-link-item">
+                        <div class="contact-link-item">
                             <span class="label">Email</span>
-                            <span class="value">contact@hiroto-horita.com</span>
-                        </a>
+                            <a href="mailto:horita.training1020@gmail.com" class="value">horita.training1020@gmail.com</a>
+                        </div>
+                        
                         <div class="contact-sns">
-                            <a href="#" target="_blank" rel="noopener noreferrer">X (Twitter)</a>
-                            <a href="#" target="_blank" rel="noopener noreferrer">GitHub</a>
+                            <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">
+                                Instagram ↗
+                            </a>
+                            <a href="https://note.com/" target="_blank" rel="noopener noreferrer">
+                                note ↗
+                            </a>
                         </div>
                     </div>
-
-                    <form id="contact-form" class="contact__form">
-                        <div class="form-group">
-                            <label for="name">Name</label>
-                            <input type="text" id="name" name="name" placeholder="お名前" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" id="email" name="email" placeholder="メールアドレス" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Message</label>
-                            <textarea id="message" name="message" rows="5" placeholder="お問い合わせ内容をご記入ください" required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn--primary btn--submit">Send Message</button>
-                    </form>
                 </div>
             </div>
         </section>
