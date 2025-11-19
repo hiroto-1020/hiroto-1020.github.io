@@ -1,39 +1,459 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8" />
-  <title>Hiroto ポートフォリオ</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <style>
-    body { font-family: system-ui, sans-serif; margin: 0; padding: 40px; line-height: 1.6; }
-    header { margin-bottom: 32px; }
-    h1 { font-size: 32px; margin-bottom: 8px; }
-    h2 { margin-top: 32px; }
-    a { color: #0366d6; text-decoration: none; }
-    a:hover { text-decoration: underline; }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Hiroto Horita Portfolio - Web & AI Frontend Engineer">
+    <title>Hiroto Horita | Frontend Engineer & AI Automation Developer</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="./assets/styles.css">
+    
+    <!-- GSAP (CDN) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 </head>
 <body>
-  <header>
-    <h1>Hiroto / エンジニア</h1>
-    <p>トレーニング指導とアプリ開発で「続けられる健康」をサポートします。</p>
-  </header>
 
-  <section>
-    <h2>サービス</h2>
-    <ul>
-      <li>オンラインパーソナルトレーニング</li>
-      <li>AI / 自動化ツール導入支援</li>
-      <li>フィットネスアプリ「FitGear」の開発・運営</li>
-    </ul>
-  </section>
+    <!-- Header / Navigation -->
+    <header class="header">
+        <div class="header__inner">
+            <a href="#" class="header__logo">H.Horita</a>
+            <nav class="nav" id="js-nav">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="#about" class="nav__link">About</a></li>
+                    <li class="nav__item"><a href="#skills" class="nav__link">Skills</a></li>
+                    <li class="nav__item"><a href="#experience" class="nav__link">Experience</a></li>
+                    <li class="nav__item"><a href="#projects" class="nav__link">Projects</a></li>
+                    <li class="nav__item"><a href="#services" class="nav__link">Services</a></li>
+                    <li class="nav__item"><a href="#contact" class="nav__link btn btn--nav">Contact</a></li>
+                </ul>
+            </nav>
+            <button class="header__hamburger" id="js-hamburger" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
 
-  <section>
-    <h2>お問い合わせ</h2>
-    <p>
-      X / Instagram の DM または<br />
-      メール: yourmail@example.com
-    </p>
-  </section>
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="hero">
+            <canvas id="hero-canvas" class="hero__bg-canvas"></canvas>
+            <div class="hero__container">
+                <div class="hero__content">
+                    <p class="hero__label fade-in">Frontend Engineer / AI Automation Developer</p>
+                    <h1 class="hero__title fade-in">
+                        Hiroto Horita<br>
+                        <span class="hero__subtitle">Crafting fast, elegant and <br class="sp-only">intelligent web experiences.</span>
+                    </h1>
+                    <div class="hero__bio fade-in">
+                        <p>
+                            はじめまして。フロントエンドエンジニアの堀田 大渡（ほりた ひろと）です。<br>
+                            ただ “作る” だけではなく、まずはクライアントの方が実現したいことや、
+                            現場で本当に困っていることを丁寧に言語化するところからご一緒します。<br>
+                            要件整理・設計・開発・運用まで、一つひとつのプロジェクトに責任を持って
+                            伴走し、WebとAIを掛け合わせた新しい価値体験を提供します。
+                        </p>
+                    </div>
+                    <div class="hero__actions fade-in">
+                        <a href="#projects" class="btn btn--primary">View Works</a>
+                        <a href="#contact" class="btn btn--ghost">Contact Me</a>
+                    </div>
+                </div>
+            </div>
+            <div class="hero__scroll-indicator">
+                <span>SCROLL</span>
+                <div class="line"></div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="section about">
+            <div class="container">
+                <h2 class="section__title" data-text="About">About Me</h2>
+                <div class="about__grid">
+                    <div class="about__text reveal-text">
+                        <h3>課題解決のための技術と対話。</h3>
+                        <p>
+                            大学2年生からWeb制作の現場に飛び込み、株式会社ガーディアンにてインターンとしてキャリアをスタート。
+                            新卒入社後はフロントエンドエンジニアとして従事し、2年目で課長職へ昇進。約30名のチームマネジメントを行いながら、
+                            プレイングマネージャーとしてWebサイトの設計・構築・運用支援を一貫して担当してきました。
+                        </p>
+                        <p>
+                            通常の開発業務に加え、社内業務改善ツールの企画・開発・導入を主導。
+                            「技術で人の時間を創出する」ことに情熱を注いでいます。
+                        </p>
+                        <p>
+                            20XX年6月よりフリーランスとして独立。現在は、AI技術（LLM/音声モデル）を活用した業務自動化ツールの開発や、
+                            React Nativeを用いたアプリケーション開発、そしてWebサイトの改修・改善支援を中心に活動しています。
+                            お客様の「想い」と「課題」に寄り添い、最後まで作り切るパートナーでありたいと考えています。
+                        </p>
+                    </div>
+                    <div class="about__stats reveal-card">
+                        <div class="stat-item">
+                            <span class="stat-num">30+</span>
+                            <span class="stat-label">Team Management</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-num">AI</span>
+                            <span class="stat-label">Automation Tools</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-num">Web</span>
+                            <span class="stat-label">Performance & SEO</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="section skills">
+            <div class="container">
+                <h2 class="section__title" data-text="Skills">Technical Stack</h2>
+                <div class="skills__grid">
+                    <!-- Certifications -->
+                    <div class="skill-card reveal-card">
+                        <div class="skill-card__header">
+                            <h3 class="skill-card__title">Certifications</h3>
+                        </div>
+                        <ul class="skill-card__list">
+                            <li>基本情報技術者試験 (FE)</li>
+                            <li>応用情報技術者試験 (AP)</li>
+                            <li>AWS 認定ソリューションアーキテクト – アソシエイト</li>
+                        </ul>
+                    </div>
+
+                    <!-- Frontend -->
+                    <div class="skill-card reveal-card">
+                        <div class="skill-card__header">
+                            <h3 class="skill-card__title">Frontend</h3>
+                        </div>
+                        <p class="skill-card__desc">パフォーマンスとアクセシビリティを考慮したモダンな実装。</p>
+                        <ul class="skill-card__list">
+                            <li>HTML5 / CSS3 (Sass/SCSS)</li>
+                            <li>JavaScript (ES6+) / TypeScript</li>
+                            <li>React / Next.js (App Router, SSR/SSG)</li>
+                            <li>GSAP / Framer Motion</li>
+                        </ul>
+                    </div>
+
+                    <!-- Backend / Infra -->
+                    <div class="skill-card reveal-card">
+                        <div class="skill-card__header">
+                            <h3 class="skill-card__title">Backend / Infra</h3>
+                        </div>
+                        <p class="skill-card__desc">サーバーレスアーキテクチャを活用した迅速なAPI構築。</p>
+                        <ul class="skill-card__list">
+                            <li>Supabase (PostgreSQL/Auth/Edge Functions)</li>
+                            <li>PHP (特殊開発案件対応)</li>
+                            <li>REST API Design</li>
+                            <li>GitHub Actions (CI/CD)</li>
+                        </ul>
+                    </div>
+
+                    <!-- Mobile -->
+                    <div class="skill-card reveal-card">
+                        <div class="skill-card__header">
+                            <h3 class="skill-card__title">Mobile & Apps</h3>
+                        </div>
+                        <p class="skill-card__desc">クロスプラットフォームでのアプリ開発とネイティブ機能連携。</p>
+                        <ul class="skill-card__list">
+                            <li>React Native / Expo</li>
+                            <li>SQLite / Data Persistence</li>
+                            <li>Device Features (Camera/Sensors)</li>
+                            <li>UI/UX Design</li>
+                        </ul>
+                    </div>
+
+                    <!-- AI / Automation -->
+                    <div class="skill-card reveal-card">
+                        <div class="skill-card__header">
+                            <h3 class="skill-card__title">AI / Automation</h3>
+                        </div>
+                        <p class="skill-card__desc">LLMや音声モデルを組み込んだ業務フローの自動化。</p>
+                        <ul class="skill-card__list">
+                            <li>OpenAI API Integration</li>
+                            <li>Speech-to-Text / Translation</li>
+                            <li>Workflow Automation Design</li>
+                            <li>Prompt Engineering</li>
+                        </ul>
+                    </div>
+
+                    <!-- Others -->
+                    <div class="skill-card reveal-card">
+                        <div class="skill-card__header">
+                            <h3 class="skill-card__title">Others</h3>
+                        </div>
+                        <ul class="skill-card__list">
+                            <li>Team Management (30名規模)</li>
+                            <li>Requirement Definition (要件定義)</li>
+                            <li>Technical Direction</li>
+                            <li>SEO Writing (AI-Assisted)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="section experience">
+            <div class="container">
+                <h2 class="section__title" data-text="History">Experience</h2>
+                <div class="timeline">
+                    <div class="timeline__item reveal-up">
+                        <div class="timeline__date">20XX – 20XX</div>
+                        <div class="timeline__content">
+                            <h3>Frontend Engineer Intern</h3>
+                            <span class="timeline__org">@ 株式会社ガーディアン（東京）</span>
+                            <p>大学在学中にインターンとして参画。Webサイト制作の実務を通じ、HTML/CSS/JavaScript/Reactの基礎から応用までを徹底的に習得。</p>
+                        </div>
+                    </div>
+                    <div class="timeline__item reveal-up">
+                        <div class="timeline__date">20XX – 20XX</div>
+                        <div class="timeline__content">
+                            <h3>Frontend Engineer / Team Lead</h3>
+                            <span class="timeline__org">@ 株式会社ガーディアン</span>
+                            <p>新卒入社後、2年目で課長職へ昇進。約30名のチームマネジメントに従事。プロジェクトリーダーとして設計・構築・運用までを担当しつつ、社内業務改善ツールの開発や、AIを活用したSEO記事制作フローの確立など、組織全体の生産性向上に貢献。</p>
+                        </div>
+                    </div>
+                    <div class="timeline__item reveal-up">
+                        <div class="timeline__date">20XX – Present</div>
+                        <div class="timeline__content">
+                            <h3>Freelance Frontend & AI Engineer</h3>
+                            <span class="timeline__org">@ Freelance</span>
+                            <p>独立後、AIを用いた業務効率化ツールの開発・導入支援を中心に活動。Webサイトの改修やアプリ開発も並行して行う。個人開発としてトレーニングアプリ「FitGear」やAIダビングアプリを開発中。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="section projects">
+            <div class="container">
+                <h2 class="section__title" data-text="Works">Selected Projects</h2>
+                <div class="projects__list">
+                    
+                    <!-- Project 1 -->
+                    <article class="project-card reveal-card">
+                        <div class="project-card__content">
+                            <span class="project-card__tag">Mobile App / Personal Dev</span>
+                            <h3 class="project-card__title">FitGear</h3>
+                            <p class="project-card__desc">
+                                完全個人開発のトレーニング記録アプリケーション。
+                                React Native/Expoを用い、直感的なUXとデータ永続化を実現。
+                                ユーザーの習慣化をサポートするグラフ機能や履歴管理を搭載。
+                            </p>
+                            <ul class="project-card__stack">
+                                <li>React Native</li>
+                                <li>TypeScript</li>
+                                <li>Supabase</li>
+                                <li>SQLite</li>
+                            </ul>
+                            <div class="project-card__link">
+                                <a href="#" class="btn-text">View Details (Coming Soon)</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Project 2 -->
+                    <article class="project-card reveal-card">
+                        <div class="project-card__content">
+                            <span class="project-card__tag">Client Work / DX</span>
+                            <h3 class="project-card__title">AI Business Automation Suite</h3>
+                            <p class="project-card__desc">
+                                企業の社内業務を効率化するためのツール群。
+                                OpenAI APIを活用し、日報作成の自動化、ドキュメントの要約、
+                                社内ナレッジのチャット検索ボットなどを設計・導入支援。
+                            </p>
+                            <ul class="project-card__stack">
+                                <li>Next.js</li>
+                                <li>OpenAI API</li>
+                                <li>Vector DB</li>
+                                <li>Python</li>
+                            </ul>
+                            <div class="project-card__link">
+                                <span class="status-badge">Client Work (Non-Disclosure)</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Project 3 -->
+                    <article class="project-card reveal-card">
+                        <div class="project-card__content">
+                            <span class="project-card__tag">In Development / AI</span>
+                            <h3 class="project-card__title">AI Dubbing App</h3>
+                            <p class="project-card__desc">
+                                動画の音声を多言語へ自動翻訳・吹き替えを行うアプリケーション。
+                                音声認識から翻訳、音声合成までをシームレスに繋ぎ、
+                                クリエイターの海外展開を支援するツールとして開発中。
+                            </p>
+                            <ul class="project-card__stack">
+                                <li>React</li>
+                                <li>Python (Backend)</li>
+                                <li>Whisper</li>
+                                <li>TTS Models</li>
+                            </ul>
+                            <div class="project-card__link">
+                                <span class="status-badge">In Development</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="section services">
+            <div class="container">
+                <h2 class="section__title" data-text="Offer">Services</h2>
+                <div class="services__grid">
+                    <div class="service-card reveal-up">
+                        <div class="service-card__icon">01</div>
+                        <h3>Web Development</h3>
+                        <p>
+                            新規サイト構築からリニューアルまで。
+                            モダンな技術選定により、高速でセキュア、かつ拡張性の高いWebサイトを構築します。
+                            SEOや運用面も考慮した設計を行います。
+                        </p>
+                    </div>
+                    <div class="service-card reveal-up">
+                        <div class="service-card__icon">02</div>
+                        <h3>Renovation & Performance</h3>
+                        <p>
+                            既存サイトの改修・表示速度の改善・SEO強化。
+                            古くなったコードベースの刷新や、UXを損なうボトルネックの解消を行い、
+                            コンバージョンに貢献するサイトへ磨き上げます。
+                        </p>
+                    </div>
+                    <div class="service-card reveal-up">
+                        <div class="service-card__icon">03</div>
+                        <h3>AI DX Support</h3>
+                        <p>
+                            AI技術を用いた業務改善ツールの企画・開発。
+                            「どこを自動化できるか」の洗い出しから、PoC（概念実証）開発、
+                            本番導入までをサポートし、業務コストを削減します。
+                        </p>
+                    </div>
+                    <div class="service-card reveal-up">
+                        <div class="service-card__icon">04</div>
+                        <h3>Documentation & Ops</h3>
+                        <p>
+                            開発だけでなく、その後の運用を見据えたドキュメント整備や
+                            運用フローの設計支援。チームが自走できる環境づくりをお手伝いします。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Process Section -->
+        <section id="process" class="section process">
+            <div class="container">
+                <h2 class="section__title" data-text="Flow">Process</h2>
+                <div class="process__steps">
+                    <div class="process__step reveal-left">
+                        <span class="step-num">01</span>
+                        <div class="step-content">
+                            <h4>Hearing & Research</h4>
+                            <p>課題・目的のヒアリングと現状分析</p>
+                        </div>
+                    </div>
+                    <div class="process__step reveal-left">
+                        <span class="step-num">02</span>
+                        <div class="step-content">
+                            <h4>IA / Wireframe</h4>
+                            <p>情報設計・構成案の作成</p>
+                        </div>
+                    </div>
+                    <div class="process__step reveal-left">
+                        <span class="step-num">03</span>
+                        <div class="step-content">
+                            <h4>Design & Prototype</h4>
+                            <p>UIデザイン・プロトタイプ作成</p>
+                        </div>
+                    </div>
+                    <div class="process__step reveal-left">
+                        <span class="step-num">04</span>
+                        <div class="step-content">
+                            <h4>Development</h4>
+                            <p>実装・CMS組み込み・テスト</p>
+                        </div>
+                    </div>
+                    <div class="process__step reveal-left">
+                        <span class="step-num">05</span>
+                        <div class="step-content">
+                            <h4>Release & Handover</h4>
+                            <p>公開作業・納品・操作レクチャー</p>
+                        </div>
+                    </div>
+                    <div class="process__step reveal-left">
+                        <span class="step-num">06</span>
+                        <div class="step-content">
+                            <h4>Improvement</h4>
+                            <p>効果測定・改善・保守運用</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section contact">
+            <div class="container">
+                <div class="contact__inner reveal-up">
+                    <h2 class="section__title" data-text="Contact">Get In Touch</h2>
+                    <p class="contact__text">
+                        制作のご依頼、業務改善のご相談、その他お仕事に関するお問い合わせは<br>
+                        以下のフォームまたはSNSよりお気軽にご連絡ください。
+                    </p>
+                    
+                    <div class="contact__links">
+                        <a href="mailto:contact@example.com" class="contact-link-item">
+                            <span class="label">Email</span>
+                            <span class="value">contact@hiroto-horita.com</span>
+                        </a>
+                        <div class="contact-sns">
+                            <a href="#" target="_blank" rel="noopener noreferrer">X (Twitter)</a>
+                            <a href="#" target="_blank" rel="noopener noreferrer">GitHub</a>
+                        </div>
+                    </div>
+
+                    <form id="contact-form" class="contact__form">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" placeholder="お名前" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" placeholder="メールアドレス" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="5" placeholder="お問い合わせ内容" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn--primary btn--submit">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p class="copyright">&copy; 20XX Hiroto Horita. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Main Script -->
+    <script type="module" src="./assets/main.js"></script>
 </body>
 </html>
