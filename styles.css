@@ -414,7 +414,7 @@ img {
     align-items: center;
     position: relative;
     padding-top: var(--header-height);
-    overflow: hidden;
+    overflow-x: hidden;
 }
 
 .hero__bg-canvas {
@@ -516,6 +516,13 @@ img {
 }
 
 @media (max-width: 900px) {
+    .hero {
+        height: auto;
+        min-height: 100vh;
+        align-items: flex-start;
+        padding-bottom: var(--spacing-lg);
+    }
+
     .hero__grid {
         grid-template-columns: 1fr;
         gap: var(--spacing-md);
