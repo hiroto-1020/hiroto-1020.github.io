@@ -436,9 +436,16 @@ img {
 
 .hero__grid {
     display: grid;
-    grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+    grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+    grid-template-rows: auto auto auto auto;
+    grid-template-areas:
+        "label visual"
+        "title visual"
+        "bio   visual"
+        "actions visual";
     align-items: center;
-    gap: var(--spacing-lg);
+    column-gap: var(--spacing-lg);
+    row-gap: var(--spacing-sm);
 }
 
 .hero__content {
@@ -449,6 +456,7 @@ img {
 
 .hero__visual {
     position: relative;
+    grid-area: visual;
 }
 
 .hero__visual-inner {
@@ -474,6 +482,7 @@ img {
 }
 
 .hero__label {
+    grid-area: label;
     font-family: var(--font-heading);
     color: var(--accent-color);
     font-weight: 600;
@@ -483,6 +492,7 @@ img {
 }
 
 .hero__title {
+    grid-area: title;
     font-family: var(--font-heading);
     font-size: clamp(2.5rem, 8vw, 5rem);
     line-height: 1.1;
@@ -501,6 +511,7 @@ img {
 }
 
 .hero__bio {
+    grid-area: bio;
     font-size: 1rem;
     line-height: 1.8;
     color: var(--text-secondary);
@@ -511,11 +522,16 @@ img {
 }
 
 .hero__actions {
+    grid-area: actions;
     display: flex;
     gap: 1rem;
 }
 
 @media (max-width: 900px) {
+    .hero__grid {
+        display: block;
+    }
+
     .hero {
         height: auto;
         min-height: 100vh;
@@ -531,6 +547,18 @@ img {
     .hero__visual-inner {
         height: 40vh;
         max-height: 320px;
+    }
+
+    .hero__actions {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.75rem;
+        margin-top: var(--spacing-sm);
+    }
+
+    .hero__actions .btn {
+        width: 100%;
+        justify-content: center;
     }
 }
 
@@ -601,6 +629,12 @@ img {
     box-shadow: 0 20px 40px rgba(0,0,0,0.3);
     border: 1px solid var(--border-color);
     aspect-ratio: 3/4;
+}
+
+@media (max-width: 600px) {
+    .about__image .image-wrapper {
+        max-height: 260px;
+    }
 }
 
 .about__image img {
