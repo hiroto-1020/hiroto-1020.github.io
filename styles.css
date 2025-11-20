@@ -574,7 +574,7 @@ img {
         justify-content: center;
     }
     .hero__scroll-indicator {
-        bottom: 0;
+        bottom: 0!important;
     }
 }
 
@@ -629,6 +629,7 @@ img {
 @media (max-width: 900px) {
     .about__grid {
         grid-template-columns: 1fr;
+        gap: 0;
     }
     
     .about__image {
